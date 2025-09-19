@@ -6,26 +6,21 @@ public class Product {
     private String name;
     private Double price;
 
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
+    public Product(String params) {
+        String[] paramArray = params.split("=", 2); // Ограничиваем количество фрагментов до 2-х
+        if (paramArray.length < 2) {
+            throw new IllegalArgumentException("Неверный формат продукта: " + params);
+        }
+        this.name = paramArray[0].trim();
+        this.price = Double.valueOf(paramArray[1].trim());
     }
-
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Double getPrice() {
         return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 
     @Override

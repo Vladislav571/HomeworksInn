@@ -5,54 +5,82 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-
-
-//        Product product = new Product("Кофе", 120.0);
-//        Product milk = new Product("Молоко", 80.0);
-//        Person person = new Person("Игорь", 1000.0);
-//
-//        person.addProduct(product);
-//        person.addProduct(milk);
-//
-//        System.out.println(person.toString().replace("[", "").replace("]", ""));
-
         Scanner scanner = new Scanner(System.in);
 
+        // Читаем информацию о покупателях и продуктах
         String personsString = scanner.nextLine();
         String productsString = scanner.nextLine();
 
-        String[] personStringArray = personsString.split(";");
-        String[] productStringArray = productsString.split(";");
+        // Разбираем на отдельные объекты
+        String[] personStrings = personsString.split(";");
+        String[] productStrings = productsString.split(";");
 
-        Person[] persons = new Person[personStringArray.length];
-        Product[] products = new Product[productStringArray.length];
+        // Создаем массивы для хранения покупателей и продуктов
+        Person[] persons = new Person[personStrings.length];
+        Product[] products = new Product[productStrings.length];
 
-        for (int i = 0; i < personStringArray.length; i++){
-            Person p = new Person(personStringArray[i]);
+        // Заполняем массив покупателей
+        for (int i = 0; i < personStrings.length; i++) {
+            Person p = new Person(personStrings[i]); // Имя покупателя и сумма денег
             persons[i] = p;
         }
 
+        // Заполняем массив продуктов
+        for (int j = 0; j < productStrings.length; j++) {
+            Product prod = new Product(productStrings[j]); // Название продукта и цена
+            products[j] = prod;
+        }
 
-        while (true){
+        // Начинаем цикл покупок
+        while (true) {
             String line = scanner.nextLine();
-            if (line.equalsIgnoreCase("end"))
-                break;
+            if (line.equalsIgnoreCase("end")) break;
 
-            String[] input = line.split(";");
-            String personName = input[0];
-            String productName = input[1];
+            // Индекс первого дефиса в строке
+            int idx = line.indexOf('-');
+            if (idx == -1) {
+                System.out.println("Неверный формат строки: " + line);
+                continue;
+            }
 
-            for (int i = 0; i < persons.length; i++){
-                if (persons[i].getName().equals(personName)){
-                    for (int j = 0; j < products.length; j++){
-                        if (products[j].getName().equals(productName)){
-                            persons[i].addProduct(products[j]);
+            // Часть до дефиса — имя покупателя
+            String personName = line.substring(0, idx).trim();
+            // Всё после дефиса — название продукта
+            String productName = line.substring(idx + 1).trim();
+
+            // Начнём поиск покупателя и продукта
+            boolean buyerFound = false;
+            boolean productFound = false;
+
+            for (Person person : persons) {
+                if (person.getName().equals(personName)) {
+                    buyerFound = true;
+                    for (Product product : products) {
+                        if (product.getName().equals(productName)) {
+                            productFound = true;
+                            if (person.buyProduct(product)) {
+                                System.out.println(person.getName() + " купил(-а) " + product.getName());
+                            } else {
+                                System.out.println(person.getName() + " не может позволить себе " + product.getName());
+                            }
+                            break;
                         }
                     }
+                    break;
                 }
             }
-        }
-        System.out.println(Arrays.toString(persons));
-    }
 
+            if (!buyerFound) {
+                System.out.println("Покупатель '" + personName + "' не найден.");
+            }
+            if (!productFound) {
+                System.out.println("Продукт '" + productName + "' не найден.");
+            }
+        }
+
+        // Итоговый отчет по покупкам
+        for (Person person : persons) {
+            System.out.println(person.toString());
+        }
+    }
 }
