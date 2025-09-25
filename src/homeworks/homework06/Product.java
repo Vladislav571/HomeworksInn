@@ -7,12 +7,20 @@ public class Product {
     private Double price;
 
     public Product(String params) {
-        String[] paramArray = params.split("=", 2); // Ограничиваем количество фрагментов до 2-х
+        String[] paramArray = params.split("=", 2); // ограничиваем количество частей до двух
         if (paramArray.length < 2) {
             throw new IllegalArgumentException("Неверный формат продукта: " + params);
         }
-        this.name = paramArray[0].trim();
-        this.price = Double.valueOf(paramArray[1].trim());
+        this.name = paramArray[0].trim(); // очищаем пробелы вокруг названия товара
+        try {
+            double priceValue = Double.parseDouble(paramArray[1].trim()); // проверяем цену
+            if (priceValue <= 0) {
+                throw new IllegalArgumentException("Цена должна быть положительной: " + paramArray[1]);
+            }
+            this.price = priceValue;
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Ошибка преобразования цены в число: " + paramArray[1], ex);
+        }
     }
 
     public String getName() {

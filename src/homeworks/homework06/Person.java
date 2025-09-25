@@ -9,9 +9,23 @@ public class Person {
     private Product[] products = new Product[0]; // Пакет с товарами
 
     public Person(String params) {
-        String[] paramArray = params.split("=");
+        if (params == null) {
+            throw new IllegalArgumentException("Параметр не может быть null");
+        }
+
+        String[] paramArray = params.split("=", 2); // ограничиваем количество частей до двух
         this.name = paramArray[0].trim();
         this.money = Double.valueOf(paramArray[1].trim());
+
+        if (paramArray.length < 2) {
+            throw new IllegalArgumentException("Неверный формат параметра: " + params);
+        }
+        this.name = paramArray[0].trim(); // очищаем пробелы вокруг имени
+        try {
+            this.money = Double.parseDouble(paramArray[1].trim()); // пытаемся преобразовать сумму в число
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Ошибка преобразования суммы в число: " + paramArray[1], ex);
+        }
     }
 
     public String getName() {
