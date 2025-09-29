@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersRepositoryFileImpl implements UsersRepository{
+public class UsersRepositoryFileImpl implements ru.orel.java.attestation01.repositories.UsersRepository {
 
     private static final String FILE_NAME = "C:\\Users\\Владислав\\HomeworksInnopolis\\users.txt";
     private List<User> users = new ArrayList<>();
