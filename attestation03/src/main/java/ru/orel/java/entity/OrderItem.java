@@ -21,11 +21,11 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
+    private main.java.ru.orel.java.entity.Order order;
 
     @ManyToOne
     @JoinColumn(name = "pizza_id", nullable = false)
-    private Pizza pizza;
+    private main.java.ru.orel.java.entity.Pizza pizza;
 
     @Column(nullable = false)
     private Integer quantity = 1;

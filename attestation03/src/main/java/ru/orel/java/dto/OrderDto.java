@@ -20,5 +20,5 @@ public class OrderDto {
     private BigDecimal totalPrice;
     private String status;
     private LocalDateTime createdAt;
-    private List<OrderItemDto> items;
+    private List<main.java.ru.orel.java.dto.OrderItemDto> items;
 }
