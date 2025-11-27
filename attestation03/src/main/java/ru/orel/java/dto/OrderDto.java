@@ -1,4 +1,4 @@
-package main.java.ru.orel.java.dto;
+package ru.orel.java.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +20,5 @@ public class OrderDto {
     private BigDecimal totalPrice;
     private String status;
     private LocalDateTime createdAt;
-    private List<main.java.ru.orel.java.dto.OrderItemDto> items;
+    private List<ru.orel.java.dto.OrderItemDto> items;
 }

@@ -1,4 +1,4 @@
-package main.java.ru.orel.java.entity;
+package ru.orel.java.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,11 +21,11 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private main.java.ru.orel.java.entity.Order order;
+    private Order order;
 
     @ManyToOne
     @JoinColumn(name = "pizza_id", nullable = false)
-    private main.java.ru.orel.java.entity.Pizza pizza;
+    private Pizza pizza;
 
     @Column(nullable = false)
     private Integer quantity = 1;

@@ -1,16 +1,15 @@
-package ru.orel.java.attestation03.controller;
+package attestation03.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.ru.orel.java.controller.OrderController;
-import main.java.ru.orel.java.dto.CreateOrderRequest;
-import main.java.ru.orel.java.dto.OrderDto;
-import main.java.ru.orel.java.dto.OrderItemDto;
-import main.java.ru.orel.java.service.OrderService;
+import ru.orel.java.controller.OrderController;
+import ru.orel.java.dto.CreateOrderRequest;
+import ru.orel.java.dto.OrderDto;
+import ru.orel.java.dto.OrderItemDto;
+import ru.orel.java.service.OrderService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;

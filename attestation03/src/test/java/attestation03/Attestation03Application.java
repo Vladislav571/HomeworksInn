@@ -1,4 +1,4 @@
-package ru.orel.java.attestation03;
+package attestation03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

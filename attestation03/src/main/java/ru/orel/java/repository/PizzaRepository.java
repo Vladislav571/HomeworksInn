@@ -1,6 +1,6 @@
-package main.java.ru.orel.java.repository;
+package ru.orel.java.repository;
 
-import main.java.ru.orel.java.entity.Pizza;
+import ru.orel.java.entity.Pizza;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

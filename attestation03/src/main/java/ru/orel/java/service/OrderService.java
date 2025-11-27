@@ -1,15 +1,15 @@
-package main.java.ru.orel.java.service;
+package ru.orel.java.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import main.java.ru.orel.java.dto.CreateOrderRequest;
-import main.java.ru.orel.java.dto.OrderDto;
-import main.java.ru.orel.java.dto.OrderItemDto;
-import main.java.ru.orel.java.entity.Order;
-import main.java.ru.orel.java.entity.OrderItem;
-import main.java.ru.orel.java.entity.Pizza;
-import main.java.ru.orel.java.repository.OrderRepository;
-import main.java.ru.orel.java.repository.PizzaRepository;
+import ru.orel.java.dto.CreateOrderRequest;
+import ru.orel.java.dto.OrderDto;
+import ru.orel.java.dto.OrderItemDto;
+import ru.orel.java.entity.Order;
+import ru.orel.java.entity.OrderItem;
+import ru.orel.java.entity.Pizza;
+import ru.orel.java.repository.OrderRepository;
+import ru.orel.java.repository.PizzaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,4 +1,4 @@
-package main.java.ru.orel.java.dto;
+package ru.orel.java.dto;
 
 import lombok.*;
 

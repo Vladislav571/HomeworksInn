@@ -1,10 +1,10 @@
-package main.java.ru.orel.java.service;
+package ru.orel.java.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import main.java.ru.orel.java.dto.PizzaDto;
-import main.java.ru.orel.java.entity.Pizza;
-import main.java.ru.orel.java.repository.PizzaRepository;
+import ru.orel.java.dto.PizzaDto;
+import ru.orel.java.entity.Pizza;
+import ru.orel.java.repository.PizzaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

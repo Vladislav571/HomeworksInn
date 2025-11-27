@@ -4,8 +4,10 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21-jdk-jammy
+RUN groupadd --system --gid 1001 appgroup && \
+    useradd --system --uid 1001 --gid 1001 appuser
+USER appuser
 WORKDIR /app
-# Копируем именно исполняемый Spring Boot JAR
-COPY --from=builder /app/target/attestation03-1.0-SNAPSHOT.jar /app/app.jar
+COPY --from=builder /app/target/*.jar ./app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "app.jar"]

@@ -1,7 +1,7 @@
-package main.java.ru.orel.java.repository;
+package ru.orel.java.repository;
 
 
-import main.java.ru.orel.java.entity.Order;
+import ru.orel.java.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

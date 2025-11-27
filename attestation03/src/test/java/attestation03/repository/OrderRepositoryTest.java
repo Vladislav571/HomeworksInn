@@ -1,13 +1,13 @@
-package ru.orel.java.attestation03.repository;
+package attestation03.repository;
 
-import main.java.ru.orel.java.entity.Order;
-import main.java.ru.orel.java.entity.Pizza;
-import main.java.ru.orel.java.repository.OrderRepository;
+import ru.orel.java.entity.Order;
+import ru.orel.java.entity.Pizza;
+import ru.orel.java.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
+
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,9 +1,9 @@
-package ru.orel.java.attestation03.controller;
+package attestation03.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.ru.orel.java.controller.PizzaController;
-import main.java.ru.orel.java.dto.PizzaDto;
-import main.java.ru.orel.java.service.PizzaService;
+import ru.orel.java.controller.PizzaController;
+import ru.orel.java.dto.PizzaDto;
+import ru.orel.java.service.PizzaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package main.java.ru.orel.java.entity;
+package ru.orel.java.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

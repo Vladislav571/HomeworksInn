@@ -1,4 +1,4 @@
-package main.java.ru.orel.java.utils;
+package ru.orel.java.utils;
 
 import java.util.regex.Pattern;
 
